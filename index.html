@@ -1091,37 +1091,19 @@
       Recommended: .mp4 H.264, 1920×1080, web-optimised.
       Example: src="assets/showreel.mp4"
     -->
-    <video
-      class="hero-video"
-      id="heroVideo"
-      src="videos/horizontal/beca-beca-recap.mp4"
-      autoplay muted loop playsinline
-      poster=""
-      aria-label="Showreel"
-    ></video>
-
-    <!-- Placeholder shown when video has no src -->
-    <div class="hero-placeholder" id="heroPlaceholder">
-      <div class="hero-placeholder-grid"></div>
-      <div class="hero-placeholder-rings">
-        <div class="hpr hpr-1"></div>
-        <div class="hpr hpr-2"></div>
-        <div class="hpr hpr-3"></div>
-        <div class="hpr-dot"></div>
-      </div>
+    <!-- Vimeo hero background -->
+    <div style="position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;">
+      <iframe
+        src="https://player.vimeo.com/video/1180393175?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);"
+        title="Showreel"
+      ></iframe>
     </div>
 
     <div class="hero-overlay"></div>
 
-    <!-- Sound toggle -->
-    <button class="sound-btn" id="soundBtn" aria-label="Toggle sound">
-      <svg id="iconMuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.531l-4.72-4.719H4.5a.75.75 0 01-.75-.75V10.5a.75.75 0 01.75-.75h1.5z"/>
-      </svg>
-      <svg id="iconSound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.531L6.75 15.75H4.5a.75.75 0 01-.75-.75v-6a.75.75 0 01.75-.75h2.25z"/>
-      </svg>
-    </button>
 
     <!-- Content -->
     <div class="hero-content">
@@ -1187,7 +1169,7 @@
         <!-- SLIDE 1 -->
         <div class="carousel-slide active" data-index="0">
           <div class="slide-inner">
-            <video class="slide-video" src="videos/verticais/club-sacramento.mp4" loop muted playsinline></video>
+            <iframe class="slide-video" src="https://player.vimeo.com/video/1180390930?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Club Sacramento"></iframe>
             <div class="slide-placeholder sp-bg-1">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1208,7 +1190,7 @@
         <!-- SLIDE 2 -->
         <div class="carousel-slide" data-index="1">
           <div class="slide-inner">
-            <video class="slide-video" src="videos/verticais/dj-2-7.mp4" loop muted playsinline></video>
+            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391631?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="8 Marvila"></iframe>
             <div class="slide-placeholder sp-bg-2">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1229,7 +1211,7 @@
         <!-- SLIDE 3 -->
         <div class="carousel-slide" data-index="2">
           <div class="slide-inner">
-            <video class="slide-video" src="videos/verticais/evo-av-recap.mp4" loop muted playsinline></video>
+            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391756?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Evo Av Factory"></iframe>
             <div class="slide-placeholder sp-bg-3">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1250,7 +1232,7 @@
         <!-- SLIDE 4 -->
         <div class="carousel-slide" data-index="3">
           <div class="slide-inner">
-            <video class="slide-video" src="videos/verticais/sousabros-kiay.mp4" loop muted playsinline></video>
+            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391712?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Kiay"></iframe>
             <div class="slide-placeholder sp-bg-4">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1271,20 +1253,14 @@
         <!-- SLIDE 5 -->
         <div class="carousel-slide" data-index="4">
           <div class="slide-inner">
-            <video class="slide-video" src="" loop muted playsinline></video>
-            <div class="slide-placeholder sp-bg-5">
-              <div class="sp-lines"></div>
-              <div class="sp-circle sp-c1"></div>
-              <div class="sp-circle sp-c2"></div>
-              <div class="sp-dot"></div>
-            </div>
-            <div class="slide-play-icon" id="playIcon4">
+            <iframe class="slide-video" src="https://player.vimeo.com/video/1172709547?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Audio Fusion"></iframe>
+            <div class="slide-play-icon hidden" id="playIcon4">
               <div class="play-circle"><div class="play-tri"></div></div>
             </div>
             <div class="slide-info">
-              <div class="slide-cat">Corporate</div>
-              <div class="slide-name">NOS — Brand Manifesto</div>
-              <div class="slide-dur">3:00</div>
+              <div class="slide-cat">RECAP</div>
+              <div class="slide-name">Audio Fusion</div>
+              <div class="slide-dur"></div>
             </div>
           </div>
         </div>
@@ -1495,24 +1471,6 @@
   /* ══════════════════════════════════════
      HERO VIDEO + SOUND TOGGLE
   ══════════════════════════════════════ */
-  const heroVideo  = document.getElementById('heroVideo');
-  const heroPlaceholder = document.getElementById('heroPlaceholder');
-  const soundBtn   = document.getElementById('soundBtn');
-  const iconMuted  = document.getElementById('iconMuted');
-  const iconSound  = document.getElementById('iconSound');
-
-  // Show placeholder if no video src
-  if (!heroVideo.src || heroVideo.src === window.location.href) {
-    heroPlaceholder.style.display = 'flex';
-  } else {
-    heroPlaceholder.style.display = 'none';
-  }
-
-  soundBtn.addEventListener('click', () => {
-    heroVideo.muted = !heroVideo.muted;
-    iconMuted.style.display = heroVideo.muted ? '' : 'none';
-    iconSound.style.display = heroVideo.muted ? 'none' : '';
-  });
 
   /* ══════════════════════════════════════
      PORTFOLIO CAROUSEL
@@ -1539,35 +1497,9 @@
     return 'far';
   }
 
-  // Hide placeholder as soon as each video has data
-  slides.forEach(slide => {
-    const video = slide.querySelector('.slide-video');
-    const placeholder = slide.querySelector('.slide-placeholder');
-    const playIcon = slide.querySelector('.slide-play-icon');
-    if (video && video.src) {
-      video.addEventListener('canplay', () => {
-        if (placeholder) placeholder.style.display = 'none';
-      }, { once: false });
-      // also hide immediately if already ready
-      if (video.readyState >= 3 && placeholder) placeholder.style.display = 'none';
-    }
-  });
-
   function updateSlides() {
     slides.forEach((slide, i) => {
       slide.className = 'carousel-slide ' + getClass(i);
-      const video = slide.querySelector('.slide-video');
-      const playIcon = slide.querySelector('.slide-play-icon');
-      if (i === current) {
-        if (video && video.src && video.src !== window.location.href) {
-          video.play().then(() => {
-            if (playIcon) playIcon.classList.add('hidden');
-          }).catch(() => {});
-        }
-      } else {
-        if (video) { video.pause(); video.currentTime = 0; }
-        if (playIcon) playIcon.classList.remove('hidden');
-      }
     });
     // Update dots
     Array.from(dotsEl.children).forEach((d, i) => {
