@@ -1091,16 +1091,13 @@
       Recommended: .mp4 H.264, 1920×1080, web-optimised.
       Example: src="assets/showreel.mp4"
     -->
-    <!-- Vimeo hero background -->
-    <div style="position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;">
-      <iframe
-        src="https://player.vimeo.com/video/1180393175?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-        style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);"
-        title="Showreel"
-      ></iframe>
-    </div>
+    <video
+      class="hero-video"
+      id="heroVideo"
+      src="videos/horizontal/BECA-BECAV2.mp4"
+      autoplay muted loop playsinline
+      aria-label="Showreel"
+    ></video>
 
     <div class="hero-overlay"></div>
 
@@ -1169,7 +1166,7 @@
         <!-- SLIDE 1 -->
         <div class="carousel-slide active" data-index="0">
           <div class="slide-inner">
-            <iframe class="slide-video" src="https://player.vimeo.com/video/1180390930?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Club Sacramento"></iframe>
+            <video class="slide-video" src="videos/verticais/club-sacramento.mp4" loop muted playsinline></video>
             <div class="slide-placeholder sp-bg-1">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1190,7 +1187,7 @@
         <!-- SLIDE 2 -->
         <div class="carousel-slide" data-index="1">
           <div class="slide-inner">
-            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391631?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="8 Marvila"></iframe>
+            <video class="slide-video" src="videos/verticais/8 MarvilaV2.mp4" loop muted playsinline></video>
             <div class="slide-placeholder sp-bg-2">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1211,7 +1208,7 @@
         <!-- SLIDE 3 -->
         <div class="carousel-slide" data-index="2">
           <div class="slide-inner">
-            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391756?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Evo Av Factory"></iframe>
+            <video class="slide-video" src="videos/verticais/Evo Av FactoryV2.mp4" loop muted playsinline></video>
             <div class="slide-placeholder sp-bg-3">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1232,7 +1229,7 @@
         <!-- SLIDE 4 -->
         <div class="carousel-slide" data-index="3">
           <div class="slide-inner">
-            <iframe class="slide-video" src="https://player.vimeo.com/video/1180391712?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Kiay"></iframe>
+            <video class="slide-video" src="videos/verticais/KiayV2.mp4" loop muted playsinline></video>
             <div class="slide-placeholder sp-bg-4">
               <div class="sp-lines"></div>
               <div class="sp-circle sp-c1"></div>
@@ -1253,7 +1250,7 @@
         <!-- SLIDE 5 -->
         <div class="carousel-slide" data-index="4">
           <div class="slide-inner">
-            <iframe class="slide-video" src="https://player.vimeo.com/video/1172709547?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Audio Fusion"></iframe>
+            <video class="slide-video" src="videos/verticais/AudioFusionV2.mp4" loop muted playsinline></video>
             <div class="slide-play-icon hidden" id="playIcon4">
               <div class="play-circle"><div class="play-tri"></div></div>
             </div>
@@ -1500,8 +1497,19 @@
   function updateSlides() {
     slides.forEach((slide, i) => {
       slide.className = 'carousel-slide ' + getClass(i);
+      const video = slide.querySelector('.slide-video');
+      const playIcon = slide.querySelector('.slide-play-icon');
+      if (i === current) {
+        if (video && video.src) {
+          video.play().then(() => {
+            if (playIcon) playIcon.classList.add('hidden');
+          }).catch(() => {});
+        }
+      } else {
+        if (video) { video.pause(); video.currentTime = 0; }
+        if (playIcon) playIcon.classList.remove('hidden');
+      }
     });
-    // Update dots
     Array.from(dotsEl.children).forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
